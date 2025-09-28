@@ -3,7 +3,7 @@ import { Hero } from "@/components/hero"
 import { ProjectsSection } from "@/components/projects-section"
 import { AboutSection } from "@/components/about-section"
 import { ContactSection } from "@/components/contact-section"
-
+import { TechStack } from "@/components/TechStack"
 
 export default function Page() {
   return (
@@ -17,7 +17,7 @@ export default function Page() {
       <SiteHeader />
       <Hero />
       <ProjectsSection />
-      
+      <TechStack />
       <AboutSection />
       <ContactSection />
       <footer className="border-t border-border py-8 text-right text-sm px-4 md:px-8">

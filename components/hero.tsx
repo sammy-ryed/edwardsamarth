@@ -11,7 +11,7 @@ export function Hero() {
             Samarth Ryan Edward
           </h1>
           <p className="text-pretty text-base text-muted-foreground md:text-lg">
-            {"Backend dev who makes APIs sing and databases behave."}
+            {"Aspiring Backend Dev who’s average at everything he does :D"}
           </p>
         </div>
 

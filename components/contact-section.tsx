@@ -35,76 +35,85 @@ export function ContactSection() {
     }
   }
 
+  const accentLinkClasses =
+    "underline decoration-accent underline-offset-4 hover:text-primary transition-colors"
+
   return (
     <section id="contact" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <div className="mb-6">
-        <h2 className="text-balance text-3xl font-extrabold tracking-tight md:text-4xl">Get in Touch</h2>
-        <p className="mt-2 text-muted-foreground">
-          Email: {" "}
-          <a
-            href="mailto:edwardsamarth@gmail.com"
-            className="underline decoration-accent underline-offset-4 hover:text-primary"
-          >
-            edwardsamarth@gmail.com
-          </a>
-        </p>
-        <ul className="mt-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
-          <li>
-            <Link
-              className="hover:text-primary"
-              href="https://www.linkedin.com/in/samarth-ryan-edward-a51047352/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              LinkedIn
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="hover:text-primary"
-              href="https://github.com/sammy-ryed"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              GitHub
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="hover:text-primary"
-              href="https://leetcode.com/u/sammy_ryed/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              LeetCode
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="hover:text-primary"
-              href="https://www.hackerrank.com/profile/edwardsamarth"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              HackerRank
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="hover:text-primary"
-              href="https://codeforces.com/profile/sammy_ryed"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Codeforces
-            </Link>
-          </li>
-        </ul>
+      {/* Heading with skewed accent bar */}
+      <div className="mb-6 flex items-center justify-between">
+        <h2 className="text-balance text-3xl font-extrabold tracking-tight md:text-4xl">
+          Get in Touch
+        </h2>
+        <div aria-hidden className="hidden h-2 w-24 -skew-x-12 bg-accent md:block" />
       </div>
+
+      <p className="mt-2 text-muted-foreground">
+        Email:{" "}
+        <a
+          href="mailto:edwardsamarth@gmail.com"
+          className={accentLinkClasses}
+        >
+          edwardsamarth@gmail.com
+        </a>
+      </p>
+
+      <ul className="mt-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
+        <li>
+          <Link
+            className={accentLinkClasses}
+            href="https://www.linkedin.com/in/samarth-ryan-edward-a51047352/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            LinkedIn
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={accentLinkClasses}
+            href="https://github.com/sammy-ryed"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            GitHub
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={accentLinkClasses}
+            href="https://leetcode.com/u/sammy_ryed/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            LeetCode
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={accentLinkClasses}
+            href="https://www.hackerrank.com/profile/edwardsamarth"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            HackerRank
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={accentLinkClasses}
+            href="https://codeforces.com/profile/sammy_ryed"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Codeforces
+          </Link>
+        </li>
+      </ul>
 
       <form
         onSubmit={onSubmit}
-        className="grid grid-cols-1 gap-4 rounded-lg border border-border bg-card/70 p-4 md:grid-cols-2 md:p-6"
+        className="grid grid-cols-1 gap-4 rounded-lg border border-border bg-card/70 p-4 md:grid-cols-2 md:p-6 mt-6"
       >
         <div className="col-span-1">
           <label htmlFor="name" className="mb-1 block text-sm text-muted-foreground">

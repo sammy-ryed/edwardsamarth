@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   title: "Samarth Ryan Edward",
   description: "Samarth Ryan Edward",
   generator: "your mom",
+  // Favicon / small profile image
+  icons: {
+    icon: "/images/prosq.jpeg",
+    shortcut: "/images/prosq.jpeg",
+  },
 }
 
 export default function RootLayout({

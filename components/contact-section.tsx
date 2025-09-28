@@ -1,16 +1,57 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
 
+// List of fun placeholder questions
+const funQuestions = [
+  "What's the most random skill you’ve secretly mastered?",
+  "If your project had a theme song, what would it be?",
+  "Tell me about the weirdest bug you’ve ever fixed.",
+  "Coffee or Tea — what fuels your coding?",
+  "If you could code in any universe, which one would it be?",
+  "What’s a small thing that made your day awesome recently?",
+  "If your computer could talk, what would it say about you?",
+  "What's a challenge you wish I could help you solve?",
+  "Which emoji describes your current mood?",
+  "Pineapple on pizza: yes or no?",
+  "What's a skill you wish everyone had?",
+  "If you had one superpower while coding, what would it be?",
+  "Name one app you couldn’t live without.",
+  "Tell me your dream project in 3 words.",
+  "What's the weirdest error message you’ve ever seen?",
+  "If you could code for any fictional company, which one?",
+  "What's your go-to productivity hack?",
+  "Share a coding joke that always makes you laugh.",
+  "If you could automate one daily task, what would it be?",
+  "What's your favorite programming snack?",
+  "Tell me about a small win you’re proud of.",
+  "Which programming language would you marry (if you could)?",
+  "Describe your coding style in one word.",
+  "Cats or dogs - who’s better at debugging?",
+  "What’s a tech trend you’re secretly excited about?",
+  "If your life was a repo, what would its README say?",
+  "Name one dream collaboration project you’d like to do.",
+  "What's a tool or library you think everyone should know?",
+  "Share a one-line life hack that’s pure gold.",
+  "If your keyboard could speak, what would it confess?",
+  "What made you smile today?",
+  "Tell me something intersting",
+  
+]
+
 export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [error, setError] = useState<string | null>(null)
+
+  // Pick a random question once on component mount
+  const [placeholder] = useState(
+    funQuestions[Math.floor(Math.random() * funQuestions.length)]
+  )
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -50,62 +91,34 @@ export function ContactSection() {
 
       <p className="mt-2 text-muted-foreground">
         Email:{" "}
-        <a
-          href="mailto:edwardsamarth@gmail.com"
-          className={accentLinkClasses}
-        >
+        <a href="mailto:edwardsamarth@gmail.com" className={accentLinkClasses}>
           edwardsamarth@gmail.com
         </a>
       </p>
 
       <ul className="mt-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
         <li>
-          <Link
-            className={accentLinkClasses}
-            href="https://www.linkedin.com/in/samarth-ryan-edward-a51047352/"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <Link className={accentLinkClasses} href="https://www.linkedin.com/in/samarth-ryan-edward-a51047352/" target="_blank" rel="noreferrer noopener">
             LinkedIn
           </Link>
         </li>
         <li>
-          <Link
-            className={accentLinkClasses}
-            href="https://github.com/sammy-ryed"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <Link className={accentLinkClasses} href="https://github.com/sammy-ryed" target="_blank" rel="noreferrer noopener">
             GitHub
           </Link>
         </li>
         <li>
-          <Link
-            className={accentLinkClasses}
-            href="https://leetcode.com/u/sammy_ryed/"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <Link className={accentLinkClasses} href="https://leetcode.com/u/sammy_ryed/" target="_blank" rel="noreferrer noopener">
             LeetCode
           </Link>
         </li>
         <li>
-          <Link
-            className={accentLinkClasses}
-            href="https://www.hackerrank.com/profile/edwardsamarth"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <Link className={accentLinkClasses} href="https://www.hackerrank.com/profile/edwardsamarth" target="_blank" rel="noreferrer noopener">
             HackerRank
           </Link>
         </li>
         <li>
-          <Link
-            className={accentLinkClasses}
-            href="https://codeforces.com/profile/sammy_ryed"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <Link className={accentLinkClasses} href="https://codeforces.com/profile/sammy_ryed" target="_blank" rel="noreferrer noopener">
             Codeforces
           </Link>
         </li>
@@ -135,7 +148,7 @@ export function ContactSection() {
             id="message"
             name="message"
             required
-            placeholder="Tell me about your project..."
+            placeholder={placeholder} // <-- Random fun question here
             className="min-h-32"
           />
         </div>

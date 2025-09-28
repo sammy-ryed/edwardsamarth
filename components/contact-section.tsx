@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -40,18 +40,24 @@ const funQuestions = [
   "Share a one-line life hack that’s pure gold.",
   "If your keyboard could speak, what would it confess?",
   "What made you smile today?",
-  "Tell me something intersting",
-  
+  "Tell me something interesting",
 ]
 
 export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [error, setError] = useState<string | null>(null)
+  const [placeholder, setPlaceholder] = useState(funQuestions[0])
 
-  // Pick a random question once on component mount
-  const [placeholder] = useState(
-    funQuestions[Math.floor(Math.random() * funQuestions.length)]
-  )
+  // Cycle through fun questions every 3s
+  useEffect(() => {
+    let x = 0
+    const interval = setInterval(() => {
+      x = (x + 1) % funQuestions.length
+      setPlaceholder(funQuestions[x])
+    }, 10000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -148,7 +154,7 @@ export function ContactSection() {
             id="message"
             name="message"
             required
-            placeholder={placeholder} // <-- Random fun question here
+            placeholder={placeholder} // <-- Cycling placeholder
             className="min-h-32"
           />
         </div>

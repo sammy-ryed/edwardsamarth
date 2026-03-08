@@ -98,7 +98,7 @@ export default function Page() {
       <div className="broadsheet">
         {/* LEFT */}
         <div className="col" style={{ paddingTop: '2rem' }}>
-          <div className="headline-l">BUILDER.<br />NOT<br /><em>JUST</em><br />BACKEND.<br />FRONTEND.<br /><em>AI.</em><br />EVERYTHING.</div>
+          <div className="headline-l">BUILDER.<br />NOT<br /><em>JUST</em><br />BACKEND.<br />FRONTEND.<br /><em style={{ color: 'black' }}>AI.</em><br /><span style={{ color: 'var(--red)' }}>EVERYTHING.</span></div>
           <div className="byline"><span>By Samarth R. Edward</span><span>Staff Reporter</span></div>
           <div className="body">
             <p>Sources confirmed Thursday that local developer Samarth Ryan Edward has been building AI tools, fullstack platforms, desktop apps, browser games, productivity systems, and simulators — sometimes all in the same semester.</p>
@@ -107,8 +107,8 @@ export default function Page() {
           <div style={{ marginTop: '1.5rem' }}>
             <div style={{ fontSize: '0.6rem', letterSpacing: '.1em', textTransform: 'uppercase', opacity: 0.4, marginBottom: '.4rem', fontFamily: 'var(--font-mono)' }}>Status Board</div>
             <div className="stack-row">
-              <div className="stack-box"><div className="sk-label">Location</div><div className="sk-val" style={{ fontSize: '1rem' }}>India 🇮🇳</div></div>
-              <div className="stack-box"><div className="sk-label">Status</div><div className="sk-val" style={{ fontSize: '.9rem', color: 'var(--red)' }}>Hiring?</div></div>
+              <div className="stack-box"><div className="sk-label">Location</div><div className="sk-val" style={{ fontSize: '1rem' }}>India</div></div>
+              <div className="stack-box"><div className="sk-label">Status</div><div className="sk-val" style={{ fontSize: '.9rem', color: 'var(--red)' }}>LOOKING FOR SOMEONE TO PAY ME TO DO THIS</div></div>
             </div>
             <div className="stack-row">
               <div className="stack-box"><div className="sk-label">Specialty</div><div className="sk-val" style={{ fontSize: '.95rem' }}>Backend</div></div>
@@ -294,7 +294,7 @@ export default function Page() {
           </div>
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap', marginTop: '1rem' }}>
             <span className="stamp">Available</span>
-            <span className="stamp" style={{ transform: 'rotate(2deg)', borderColor: 'var(--blue)', color: 'var(--blue)' }}>Builder</span>
+            <span className="stamp" style={{ transform: 'rotate(2deg)', borderColor: 'black', color: 'black' }}>Builder</span>
           </div>
         </div>
       </div>
